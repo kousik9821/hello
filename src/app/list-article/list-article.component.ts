@@ -25,6 +25,12 @@ export class ListArticleComponent implements OnInit {
           this.users = data;
       });
   }
+  editUser(id: number): void {
+    //window.localStorage.removeItem("editUserId");
+    window.localStorage.setItem("editUserId", id.toString());
+    alert(id)
+    this.router.navigate(['edit-article']);
+  };
 
   
 }

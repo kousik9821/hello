@@ -8,12 +8,15 @@ import {ApiService} from "./core/api.service";
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import {routing} from "./app.routing";
+import { EditArticleComponent } from './edit-article/edit-article.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ListArticleComponent
+    ListArticleComponent,
+    
+    EditArticleComponent
   ],
   imports: [
     BrowserModule,

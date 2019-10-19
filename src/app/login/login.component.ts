@@ -28,9 +28,11 @@ export class LoginComponent implements OnInit {
     this.apiService.login(body.toString()).subscribe(data => {
      
       window.sessionStorage.setItem('token', JSON.stringify(data));
-      alert(JSON.stringify(data));
+     // alert(JSON.stringify(data));
       console.log(window.sessionStorage.getItem('token'));
-      this.router.navigate(['list-article']);
+     //window.sessionStorage.setItem('access_token',JSON.parse(window.sessionStorage.getItem('token')).access_token);
+    
+     this.router.navigate(['list-article']);
     }, error => {
         alert(error.error.error_description)
     });
