@@ -33,5 +33,8 @@ export class ApiService {
   getUserById(id:number) {
     return this.http.get(this.baseUrl + 'user/article/' + id+'?access_token=' + JSON.parse(window.sessionStorage.getItem('token')).access_token );
   }
+  updateArticle(article:Article) {
+    return this.http.put(this.baseUrl + 'user/article?access_token=' + JSON.parse(window.sessionStorage.getItem('token')).access_token,article);
+  }
 
 }

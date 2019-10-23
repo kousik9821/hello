@@ -33,6 +33,17 @@ editForm:FormGroup;
         this.editForm.setValue(data);
       });
   }
-  
+  onSubmit() {
+    this.apiService.updateArticle(this.editForm.value)
+      .pipe(first())
+      .subscribe(
+        data => {
+            alert('Article updated successfully.');
+           this.router.navigate(['list-article']);
+        },
+        error => {
+          alert(error);
+        });
+  }
 
 }

@@ -20,7 +20,22 @@
       
         
       </tr>
+      <tr>
+        <td colspan="2" class="text-center">
+            <input type="button" (click)="onLogout()" value="Logout" />
+        </td>
+    </tr>
       </tbody>
     </table>
+    <form [formGroup]="oppoSuitsForm" (ngSubmit)="onSubmit()">
+
+      <select formControlName="name" (change)="changeSuit($event)">
+        <option disabled>Select Oppo Suits</option>
+        <option>Choose oppo suit</option>
+        <option *ngFor="let suit of oppoSuits">{{suit}}</option>
+      </select>
+    
+      <button>Submit</button>
+    </form>
   </div>
   
